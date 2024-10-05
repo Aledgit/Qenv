@@ -20,3 +20,12 @@ config.yaml
 
 # Codes
 codes.txt
+
+# npm debug files
+npm-debug.log*
+
+# React build directory
+/build/
+
+# Node.js dependencies
+node_modules/
