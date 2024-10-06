@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 
+# Database
+api/data.db
+
 # Env variables
 .env
 
