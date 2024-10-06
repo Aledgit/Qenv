@@ -1,6 +1,8 @@
 import React from 'react';
 import WeatherWidget from './components/WeatherWidget';
 import AirQualityWidget from './components/AirQualityWidget';
+import AggregatedWeatherWidget from './components/AggregatedWeatherWidget';
+
 
 function App() {
   return (
@@ -9,6 +11,7 @@ function App() {
         <h1>Real-Time Environmental Data Platform</h1>
         <WeatherWidget city="Santiago" />
         <AirQualityWidget city="Santiago" />
+        <AggregatedWeatherWidget />
       </header>
     </div>
   );
