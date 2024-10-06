@@ -55,5 +55,25 @@ def get_air_quality():
 
     return jsonify(result)
 
+# Connect to the database and fetch aggregated weather data
+@app.route('/api/aggregated_weather', methods=['GET'])
+def get_aggregated_weather():
+    conn = sqlite3.connect('data.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM daily_avg_weather ORDER BY date DESC LIMIT 10")
+    rows = cursor.fetchall()
+    conn.close()
+    return jsonify(rows)
+
+# Connect to the database and fetch aggregated air quality data
+@app.route('/api/aggregated_air_quality', methods=['GET'])
+def get_aggregated_air_quality():
+    conn = sqlite3.connect('data.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM daily_avg_air_quality ORDER BY date DESC LIMIT 10")
+    rows = cursor.fetchall()
+    conn.close()
+    return jsonify(rows)
+
 if __name__ == '__main__':
     app.run(debug=True)
